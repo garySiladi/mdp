@@ -16,6 +16,7 @@
     "no-duplicate-imports": 0,
     "no-confusing-arrow": 0,
     "arrow-parens": [2, "as-needed" ],
+    "template-curly-spacing": [2, "always" ],
     "import/no-duplicates": 1,
     "import/prefer-default-export": 0,
     "flowtype/define-flow-type": 1,
