@@ -9,11 +9,14 @@ type Props = {
 };
 
 const PatientInfoView = ({ name, patientId }: Props) => (
-  <Link to={`/patient/${ patientId }`}>
+  <Link to={`/patient/${ patientId }`} className="patient-info">
     <Icon name="patientAvatar" />
     <div>
-      <div>{name}</div>
-      <div>{`ID: ${ patientId }`}</div>
+      <div className="text-highlight bold">{name}</div>
+      <div>
+        <span>{'ID: '}</span>
+        <span className="bold">{patientId}</span>
+      </div>
     </div>
   </Link>
 );
