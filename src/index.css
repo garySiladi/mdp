@@ -1,0 +1,9 @@
+@import './css/colors.css';
+@import './css/layout.css';
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  font-size: 1em;
+}
