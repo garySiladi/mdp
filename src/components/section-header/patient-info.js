@@ -1,6 +1,7 @@
 // @flow
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 import { Icon } from '../image';
 
 type Props = {
@@ -8,17 +9,24 @@ type Props = {
   +patientId: string,
 };
 
+const PatientInfo = (props: Props) => <PatientInfoView {...props} />;
+
 const PatientInfoView = ({ name, patientId }: Props) => (
   <Link to={`/patient/${ patientId }`} className="patient-info">
-    <Icon name="patientAvatar" />
     <div>
-      <div className="text-highlight bold">{name}</div>
-      <div>
-        <span>{'ID: '}</span>
-        <span className="bold">{patientId}</span>
-      </div>
+      <Icon name="patientAvatar" />
+      <span className="text-highlight bold">{name}</span>
+    </div>
+    <div>
+      <span>{'ID: '}</span>
+      <span className="bold">{patientId}</span>
     </div>
   </Link>
 );
 
-export default PatientInfoView;
+const mapStateToProps = state => ({
+  name: state.selectedPatient.name,
+  patientId: state.selectedPatient.id,
+});
+
+export default connect(mapStateToProps)(PatientInfo);
