@@ -62,7 +62,7 @@
     "lint": "yarn lint:js && yarn lint:css",
     "lint:js": "eslint src/**/*.js",
     "lint:css": "stylelint src/**/*.css",
-    "precommit": "yarn lint && yarn flow"
+    "precommit": "yarn lint"
   },
   "jest": {
     "collectCoverageFrom": [
