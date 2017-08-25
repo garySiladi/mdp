@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { Store } from '../store';
 import { Header } from '../components/header';
 import { Homepage } from '../components/home-page';
-import { PatientInfo } from '../components/section-header';
+import { Graph } from '../components/chart';
 
 class App extends React.Component<{}> { // eslint-disable-line react/prefer-stateless-function
   render() {
@@ -14,7 +14,7 @@ class App extends React.Component<{}> { // eslint-disable-line react/prefer-stat
           <div>
             <Header />
             <Route exact path="/" component={Homepage} />
-            <Route path="/patient" component={PatientInfo} />
+            <Route path="/patient" component={Graph} />
           </div>
         </Router>
       </Store>
