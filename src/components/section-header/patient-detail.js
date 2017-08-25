@@ -22,7 +22,7 @@ const PatientDetailView = ({ phone, email }: Props) => (
   </div>
 );
 
-const mapStateToProps = { selectedPatient: { phone, email } } => ({
+const mapStateToProps = ({ selectedPatient: { phone, email } }) => ({
   phone,
   email,
 });

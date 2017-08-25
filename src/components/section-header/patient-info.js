@@ -24,7 +24,7 @@ const PatientInfoView = ({ name, patientId }: Props) => (
   </Link>
 );
 
-const mapStateToProps = { selectedPatient: { name, id }} => ({
+const mapStateToProps = ({ selectedPatient: { name, id } }) => ({
   name,
   id,
 });
