@@ -30,3 +30,4 @@ const mapStateToProps = { selectedPatient: { name, id }} => ({
 });
 
 export default connect(mapStateToProps)(PatientInfo);
+

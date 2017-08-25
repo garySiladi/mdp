@@ -3,8 +3,8 @@ import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { Store } from '../store';
 import { Header } from '../components/header';
-
-const microApp = () => <h1>Hello</h1>;
+import { Homepage } from '../components/home-page';
+import { PatientInfo } from '../components/section-header';
 
 class App extends React.Component<{}> { // eslint-disable-line react/prefer-stateless-function
   render() {
@@ -13,7 +13,8 @@ class App extends React.Component<{}> { // eslint-disable-line react/prefer-stat
         <Router>
           <div>
             <Header />
-            <Route path="/" component={microApp} />
+            <Route exact path="/" component={Homepage} />
+            <Route path="/patient" component={PatientInfo} />
           </div>
         </Router>
       </Store>
