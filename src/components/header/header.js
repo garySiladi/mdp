@@ -1,27 +1,10 @@
 // @flow
 import React from 'react';
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
-import { fetchPatients, receivedPatients } from '../../api';
 
-type Props = {
-  +actions: {
-    +dispatchReceivedPatients: Function,
-  },
-};
-
-const Header = ({ actions }: Props) => (
+const Header = () => (
   <div className="header">
-    <button
-      onClick={() => { fetchPatients(actions.dispatchReceivedPatients); }}
-    >
-      Load patients
-    </button>
+    Header
   </div>
 );
 
-export default connect(null,
-  dispatch => ({
-    actions: bindActionCreators({ dispatchReceivedPatients: receivedPatients }, dispatch),
-  }),
-)(Header);
+export default Header;

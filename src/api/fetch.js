@@ -8,7 +8,7 @@ const dummyPatients = [
     phone: '+421123456789',
     email: 'patient.dummy1@email.com',
     lastStudyDate: '2017-08-23T10:19:28.893Z',
-    studyCount: 0,
+    studyCount: 2,
   },
   {
     id: '599d56b015c2230b24a37896',
@@ -16,7 +16,7 @@ const dummyPatients = [
     phone: '+421123456789',
     email: 'patient.dummy1@email.com',
     lastStudyDate: '2017-08-23T10:19:28.893Z',
-    studyCount: 0,
+    studyCount: 3,
   },
 ];
 
