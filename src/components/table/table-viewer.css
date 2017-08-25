@@ -1,0 +1,18 @@
+.ReactTable {
+  border: none;
+}
+
+.ReactTable .rt-tbody .rt-td {
+  padding: 1em;
+  border-right: none;
+}
+
+.ReactTable .rt-thead .rt-th {
+  padding: 1em;
+  box-shadow: none;
+  border-right: none;
+}
+
+.study-count {
+  max-width: 110px;
+}

@@ -10,3 +10,7 @@ body {
   background-color: var(--color-battlefield);
   color: var(--color-planetside);
 }
+
+a {
+  text-decoration: none;
+}
