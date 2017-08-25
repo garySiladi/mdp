@@ -1,24 +1,26 @@
 // @flow
 import React from 'react';
-import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { fetchPatients, receivedPatients, selectPatient } from '../../api';
 import { TableViewer } from './';
+import type { Patient } from '../../store';
 
 type Props = {
   +actions: {
     +dispatchReceivedPatients: Function,
     +dispatchSelectedPatient: Function,
   },
-  data: PropTypes.arrayOf
+  +data: {
+    patientList: Array<Patient>,
+  }
 };
 
-class TableWrapper extends React.Component<{}> {
-  componentDidMount() {
+class TableWrapper extends React.Component<> {
+  componentWillMount() {
     fetchPatients(this.props.actions.dispatchReceivedPatients);
   }
-  props: Props
+  props:Props
   render() {
     return (
       <div>
@@ -30,27 +32,15 @@ class TableWrapper extends React.Component<{}> {
     );
   }
 }
+const mapStateToProps = state => ({ data: state.data });
 
-function mapStateToProps(state) {
-  return { data: state.data };
-}
-
-function mapDispatchToProps(dispatch) {
-  return {
-    actions:
-      bindActionCreators({
-        dispatchReceivedPatients: receivedPatients,
-        dispatchSelectedPatient: selectPatient,
-      }, dispatch),
-  };
-}
-
-TableWrapper.propTypes = {
-  actions: PropTypes.shape({
-    dispatchReceivedPatients: PropTypes.func,
-    dispatchSelectedPatient: PropTypes.func,
-  }),
-};
+const mapDispatchToProps = dispatch => ({
+  actions:
+    bindActionCreators({
+      dispatchReceivedPatients: receivedPatients,
+      dispatchSelectedPatient: selectPatient,
+    }, dispatch),
+});
 
 TableWrapper.defaultProps = {
   actions: null,

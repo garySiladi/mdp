@@ -1,17 +1,27 @@
 // @flow
-
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import ReactTable from 'react-table';
-import 'react-table/react-table.css';
 
 const formatDate = timestamp => {
   const date = new Date(timestamp);
   return date.toLocaleDateString('en-GB', { month: 'short', day: '2-digit', year: 'numeric' });
 };
 
-const TableViewer = ({ data, handleSelectPatient }) => (
+type TableViewerDataProps = {
+  +id: string,
+  +name: string,
+  +phone: string,
+  +studyCount: string,
+  +lastStudyDate: string,
+};
+
+type TableViewerProps = {
+  +data: Array<TableViewerDataProps>,
+  handleSelectPatient: () => void,
+};
+
+const TableViewer = ({ data, handleSelectPatient }: TableViewerProps) => (
   <div className="table-viewer">
     <ReactTable
       data={data}
@@ -64,19 +74,6 @@ const TableViewer = ({ data, handleSelectPatient }) => (
     />
   </div>
 );
-
-TableViewer.propTypes = {
-  data: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string,
-      name: PropTypes.string,
-      phone: PropTypes.string,
-      studyCount: PropTypes.number,
-      lastStudyDate: PropTypes.string,
-    }),
-  ),
-  handleSelectPatient: PropTypes.func,
-};
 
 TableViewer.defaultProps = {
   data: [],

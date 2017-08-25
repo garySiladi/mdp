@@ -22,10 +22,7 @@ export const receiveDataReducer = (state: StateType = INITIAL_STATE, action: Act
 export const selectPatientReducer = (state: StateType = INITIAL_STATE, action: ActionType) => {
   switch (action.type) {
     case SELECT_PATIENT: {
-      return {
-        ...state,
-        ...action.payload,
-      };
+      return action.payload;
     }
     default: {
       return state;
