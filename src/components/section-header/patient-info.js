@@ -24,9 +24,9 @@ const PatientInfoView = ({ name, patientId }: Props) => (
   </Link>
 );
 
-const mapStateToProps = state => ({
-  name: state.selectedPatient.name,
-  patientId: state.selectedPatient.id,
+const mapStateToProps = { selectedPatient: { name, id }} => ({
+  name,
+  id,
 });
 
 export default connect(mapStateToProps)(PatientInfo);
