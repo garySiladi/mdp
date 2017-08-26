@@ -21,7 +21,7 @@ const dummyPatients = [
 ];
 
 const fetchData = (url, callback, temporaryFakeValue = dummyPatients) => {
-  console.log(`Fetching: ${ ENDPOINT }${ url }`);
+  console.log(`Fetching: ${ ENDPOINT }${ url }`); // eslint-disable-line
   callback(temporaryFakeValue);
 };
 
