@@ -1,0 +1,11 @@
+.analysis-header {
+  display: table;
+  width: 100%;
+  height: 10em;
+}
+
+.analysis-header > div {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+}

@@ -1,0 +1,12 @@
+.analysis-body {
+  padding: 2em;
+  background-color: var(--color-battlefield);
+}
+
+.analysis-body > div {
+  display: flex;
+}
+
+.analysis-body > div > * {
+  flex: 1;
+}

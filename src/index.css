@@ -9,6 +9,7 @@ body {
   font-size: 1em;
   background-color: var(--color-battlefield);
   color: var(--color-planetside);
+  -webkit-font-smoothing: antialiased;
 }
 
 a {

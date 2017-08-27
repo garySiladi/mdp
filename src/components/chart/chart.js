@@ -20,7 +20,6 @@ const maxData = 800;
 const maximum = Math.log10(maxData);
 const dummyData = Array(maxData).fill().map((_, i) => (
   Math.log10(i) / maximum
-  // (Math.random() * 0.2)
 ));
 
 class Graph extends React.Component {
