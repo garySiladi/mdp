@@ -1,13 +1,14 @@
 // @flow
 import React from 'react';
+import type { Node } from 'react';
 
 type Props = {
-  +children: Children,
+  +children: Node,
 };
 
-const SectionHeader = (props:Props) => (
+const SectionHeader = ({ children }:Props) => (
   <div className="section-header">
-    {props.children}
+    {children}
   </div>
 );
 

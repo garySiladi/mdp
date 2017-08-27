@@ -11,20 +11,6 @@ body {
   color: var(--color-planetside);
 }
 
-.link-button {
-  border: 1px solid var(--color-tron);
-  border-radius: 5px;
-  padding: 5px 30px;
-  text-align: center;
-  color: var(--color-halo);
-  transition: 0.3s background-color, 0.3s color;
-}
-
-.link-button:hover {
-  background-color: var(--color-tron);
-  color: var(--color-battlefield);
-}
-
 a {
   text-decoration: none;
 }

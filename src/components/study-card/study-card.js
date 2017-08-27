@@ -8,7 +8,7 @@ import { formatDate } from '../../util';
 const StudyCard = ({ id, name, date, pictureCount, previewImage }: Study) => (
   <div className="study-card">
     <img
-      src={previewImage} // TODO image processing/component
+      src={previewImage} // TODO: image processing/component
       alt={name}
       className="preview-image"
     />

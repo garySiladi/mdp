@@ -6,10 +6,10 @@ type Props = {
   +studyList: Array<Study>,
 };
 
-const dummyStudies = [ // TODO implement redux
+const dummyStudies = [ // TODO: implement redux
   {
     id: '908209471209421',
-    name: 'Heart Test',
+    name: 'Testicles Test',
     date: '2017-08-23T10:19:28.893Z',
     pictureCount: 40,
     previewImage: 'someLinkOrSomeObject',
