@@ -1,6 +1,6 @@
 // @flow
 import React from 'react';
-import { SectionHeader, PatientDetail, PatientInfo, StudyInfo } from '../section-header';
+import { SectionHeader, PatientDetail, PatientInfo, PatientStudies } from '../section-header';
 import { StudyCollection } from '../study-collection';
 
 const PatientPage = () => (
@@ -8,9 +8,11 @@ const PatientPage = () => (
     <SectionHeader>
       <PatientInfo />
       <PatientDetail />
-      <StudyInfo />
+      <PatientStudies />
     </SectionHeader>
-    <StudyCollection />
+    <div className="section-body">
+      <StudyCollection />
+    </div>
   </div>
 );
 

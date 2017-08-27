@@ -1,5 +1,8 @@
+.analysis > .section-body {
+  padding-top: 1.5em;
+}
+
 .analysis-body {
-  padding: 2em;
   background-color: var(--color-battlefield);
 }
 

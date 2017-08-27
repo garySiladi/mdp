@@ -1,7 +1,4 @@
 .study-collection {
-  margin-top: 2em;
-  padding: 1.5em;
-  background-color: var(--color-overwatch);
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;

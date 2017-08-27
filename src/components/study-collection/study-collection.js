@@ -12,21 +12,21 @@ const dummyStudies = [ // TODO: implement redux
     name: 'Testicles Test',
     date: '2017-08-23T10:19:28.893Z',
     pictureCount: 40,
-    previewImage: 'someLinkOrSomeObject',
+    previewImage: 'http://sciencenordic.com/sites/default/files/imagecache/620x/MR-UiO_None.jpg',
   },
   {
     id: '456575676579421',
     name: 'Lung Test',
     date: '2017-07-23T10:19:28.893Z',
     pictureCount: 100,
-    previewImage: 'someLinkOrSomeObject',
+    previewImage: 'http://sciencenordic.com/sites/default/files/imagecache/620x/MR-UiO_None.jpg',
   },
   {
     id: '124125215125121',
     name: 'Liver Test',
     date: '2017-04-23T10:19:28.893Z',
     pictureCount: 13,
-    previewImage: 'someLinkOrSomeObject',
+    previewImage: 'http://sciencenordic.com/sites/default/files/imagecache/620x/MR-UiO_None.jpg',
   },
 ];
 
