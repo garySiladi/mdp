@@ -1,0 +1,11 @@
+.titled-section {
+  padding: 2em;
+}
+
+.titled-section > .title {
+  padding-bottom: 2em;
+}
+
+.titled-section > .titled-section-body {
+  width: 100%;
+}
