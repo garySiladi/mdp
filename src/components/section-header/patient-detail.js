@@ -1,5 +1,6 @@
 // @flow
 import React from 'react';
+import { connect } from 'react-redux';
 import { Icon } from '../image';
 
 type Props = {
@@ -13,11 +14,11 @@ const PatientDetailView = ({ phone, email }: Props) => (
   <div className="patient-detail">
     <div>
       <Icon name="phone" />
-      <span className="text-light bold">{phone}</span>
+      <span className="text-light bold patient-phone">{phone}</span>
     </div>
     <div>
       <Icon name="email" />
-      <span className="text-highlight">{email}</span>
+      <span className="text-highlight patient-email">{email}</span>
     </div>
   </div>
 );

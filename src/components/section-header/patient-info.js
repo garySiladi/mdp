@@ -6,22 +6,22 @@ import { Icon } from '../image';
 
 type Props = {
   +name: string,
-  +patientId: string,
+  +id: string,
 };
 
 const PatientInfo = (props: Props) => <PatientInfoView {...props} />;
 
-const PatientInfoView = ({ name, patientId }: Props) => (
-  <Link to={`/patient/${ patientId }`} className="patient-info">
-    <div>
+const PatientInfoView = ({ name, id }: Props) => (
+  <div className="patient-info">
+    <Link to={`/patient/${ id }`}>
       <Icon name="patientAvatar" />
-      <span className="text-highlight bold">{name}</span>
+      <span className="text-highlight bold patient-name">{name}</span>
+    </Link>
+    <div className="patient-id">
+      <span className="bold">{'ID: '}</span>
+      <span>{id}</span>
     </div>
-    <div>
-      <span>{'ID: '}</span>
-      <span className="bold">{patientId}</span>
-    </div>
-  </Link>
+  </div>
 );
 
 const mapStateToProps = ({ selectedPatient: { name, id } }) => ({

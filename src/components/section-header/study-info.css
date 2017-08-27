@@ -1,0 +1,25 @@
+:root {
+  --print-icon-size: 1.5em;
+}
+
+.studyinfo {
+  display: flex;
+  padding-top: 0.5em;
+  flex-direction: row;
+  flex-grow: 1;
+  justify-content: flex-end;
+}
+
+.studyinfo .label {
+  padding-right: 1em;
+}
+
+.studyinfo .study-count,
+.studyinfo .last-study-date {
+  padding-right: 3em;
+}
+
+.studyinfo .icon {
+  width: var(--print-icon-size);
+  height: var(--print-icon-size);
+}
