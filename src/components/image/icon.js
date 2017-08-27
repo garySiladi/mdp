@@ -1,12 +1,14 @@
 // @flow
 import React from 'react';
+import classnames from 'classnames';
 import { icons } from '../../assets';
 
 type Props = {
   +name: string,
+  className?: string,
 };
 
-const Icon = ({ name }: Props) => {
+const Icon = ({ name, className }: Props) => {
   if (!icons[name]) {
     throw new Error(`Icon "${ name }" is not present in asset folder.`);
   }
@@ -15,9 +17,13 @@ const Icon = ({ name }: Props) => {
     <img
       src={icons[name]}
       alt={name}
-      className="icon"
+      className={classnames('icon', className)}
     />
   );
+};
+
+Icon.defaultProps = {
+  className: '',
 };
 
 export default Icon;

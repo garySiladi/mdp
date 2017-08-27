@@ -3,6 +3,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { Store } from '../store';
 import { Header } from '../components/header';
+import { BackButton } from '../components/back-button';
 import { Homepage } from '../components/home-page';
 import { Analysis } from '../components/analysis-page';
 import { PatientPage } from '../components/patient-page';
@@ -14,9 +15,14 @@ class App extends React.Component<{}> { // eslint-disable-line react/prefer-stat
         <Router>
           <div>
             <Header />
-            <Route exact path="/" component={Homepage} />
-            <Route path="/analysis" component={Analysis} />
-            <Route path="/patient" component={PatientPage} />
+            <div className="content">
+              <BackButton />
+              <div className="content-body">
+                <Route exact path="/" component={Homepage} />
+                <Route path="/analysis" component={Analysis} />
+                <Route path="/patient" component={PatientPage} />
+              </div>
+            </div>
           </div>
         </Router>
       </Store>

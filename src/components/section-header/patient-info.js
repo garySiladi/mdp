@@ -12,16 +12,16 @@ type Props = {
 const PatientInfo = (props: Props) => <PatientInfoView {...props} />;
 
 const PatientInfoView = ({ name, id }: Props) => (
-  <div className="patient-info">
-    <Link to={`/patient/${ id }`}>
+  <Link to={`/patient/${ id }`} className="patient-info">
+    <div>
       <Icon name="patientAvatar" />
       <span className="text-highlight bold patient-name">{name}</span>
-    </Link>
-    <div className="patient-id">
-      <span className="bold">{'ID: '}</span>
-      <span>{id}</span>
     </div>
-  </div>
+    <div className="patient-id">
+      <span>{'ID: '}</span>
+      <span className="bold id">{id}</span>
+    </div>
+  </Link>
 );
 
 const mapStateToProps = ({ selectedPatient: { name, id } }) => ({

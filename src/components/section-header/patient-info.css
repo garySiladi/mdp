@@ -5,6 +5,10 @@
   text-decoration: none;
 }
 
+.patient-info > div {
+  margin-bottom: 0.5em;
+}
+
 .patient-info .icon {
   padding-right: 1em;
   vertical-align: middle;

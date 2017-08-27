@@ -17,3 +17,9 @@
   background-color: var(--color-tron);
   color: var(--color-battlefield);
 }
+
+.section-body {
+  margin-top: 2em;
+  padding: 3em;
+  background-color: var(--color-destiny);
+}

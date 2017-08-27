@@ -3,26 +3,25 @@
   flex-direction: column;
   flex-grow: 1;
   max-width: 30%;
-  height: 400px;
   background-color: var(--color-battlefield);
   padding: 1em;
   justify-content: space-between;
+  transition: outline 0.3s;
+  outline: var(--color-battlefield) solid 1px;
 }
 
-.study-card:nth-child(3n+2) {
-  margin: 0 1.5em;
+.study-card:hover {
+  outline-color: var(--color-tron);
 }
 
 .study-card .preview-image {
-  background-color: var(--color-tron);
-  height: 280px;
-  max-height: 280px;
+  width: 100%;
   margin-bottom: 1em;
 }
 
 .study-card .study-card-text {
   font-size: 0.75em;
-  margin: 0.5em 0;
+  margin: 1em 0;
 }
 
 .study-card-text .icon {
@@ -39,8 +38,8 @@
 }
 
 .study-card-buttons .icon {
-  width: 0.75em;
-  height: 0.75em;
+  width: 0.85em;
+  height: 0.85em;
   padding-left: 0.5em;
 }
 
