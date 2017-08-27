@@ -8,6 +8,14 @@ export type Patient = {
   +lastStudyDate: Date,
 }
 
+export type Study = {
+  +id: string,
+  +name: string,
+  +date: Date,
+  +pictureCount: number,
+  +previewImage: string,
+}
+
 export type State = {
   +data: {
     patientList: Array<Patient>,

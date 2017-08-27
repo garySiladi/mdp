@@ -1,4 +1,19 @@
 .patient-info {
+  padding: 0.5em 1.5em;
+  border-right: 1px solid var(--color-overwatch);
   color: var(--color-planetside);
   text-decoration: none;
+}
+
+.patient-info .icon {
+  padding-right: 1em;
+  vertical-align: middle;
+}
+
+.patient-name {
+  vertical-align: middle;
+}
+
+.patient-id {
+  padding-left: 2em;
 }

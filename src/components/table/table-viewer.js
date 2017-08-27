@@ -2,11 +2,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import ReactTable from 'react-table';
-
-const formatDate = timestamp => {
-  const date = new Date(timestamp);
-  return date.toLocaleDateString('en-GB', { month: 'short', day: '2-digit', year: 'numeric' });
-};
+import { formatDate } from '../../util';
 
 type TableViewerDataProps = {
   +id: string,
