@@ -13,7 +13,7 @@ const Analysis = () => (
     <SectionHeader>
       <PatientInfo />
       <SectionTitle title="Analysis" />
-      <StudyInfo name="Testing" sliceCount="20" date="2017-08-23T10:19:28.893Z" />
+      <StudyInfo />
     </SectionHeader>
     <div className="section-body">
       <AnalysisHeader />

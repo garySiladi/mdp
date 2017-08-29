@@ -16,7 +16,7 @@ const StudyCard = ({
     id,
     name,
     date,
-    pictureCount,
+    sliceCount,
     previewImage,
   },
   onSelect,
@@ -32,7 +32,7 @@ const StudyCard = ({
       <div className="study-card-text">
         <span>{formatDate(date)}</span>
         <Icon name="numberOfPicture" />
-        <span className="text-light">{pictureCount}</span>
+        <span className="text-light">{sliceCount}</span>
       </div>
     </a>
     <div className="study-card-buttons">

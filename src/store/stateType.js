@@ -13,7 +13,7 @@ export type Study = {
   +patientId: string,
   +name: string,
   +date: Date,
-  +pictureCount: number,
+  +sliceCount: number,
   +previewImage: string,
   +expectedResult: Array<number>,
   +actualResult: Array<number>,

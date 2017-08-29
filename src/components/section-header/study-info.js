@@ -1,5 +1,6 @@
 // @flow
 import React from 'react';
+import { connect } from 'react-redux';
 import { Icon } from '../image';
 import { formatDate } from '../../util';
 
@@ -20,4 +21,10 @@ const StudyInfo = ({ name, sliceCount, date }: Props) => (
   </div>
 );
 
-export default StudyInfo;
+const mapStateToProps = ({ selectedStudy: { name, sliceCount, date } }) => ({
+  name,
+  sliceCount,
+  date,
+});
+
+export default connect(mapStateToProps)(StudyInfo);
