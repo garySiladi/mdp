@@ -1,11 +1,11 @@
 .titled-section {
-  padding: 2em;
+  padding: 1em;
 }
 
 .titled-section > .title {
   padding-bottom: 2em;
 }
 
-.titled-section > .titled-section-body > img {
-  width: 100%;
+.titled-section-body {
+  height: 100%;
 }

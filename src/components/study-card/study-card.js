@@ -5,8 +5,22 @@ import { Icon } from '../image';
 import type { Study } from '../../store';
 import { formatDate } from '../../util';
 
+type Props = {
+  +cardData: Study,
+  +onSelect: Function,
+};
+
 // TODO: Adding 'study-card-button' makes text centered, need to double check with designer
-const StudyCard = ({ id, name, date, pictureCount, previewImage }: Study) => (
+const StudyCard = ({
+  cardData: {
+    id,
+    name,
+    date,
+    pictureCount,
+    previewImage,
+  },
+  onSelect,
+}: Props) => (
   <div className="study-card">
     <a href={`/viewer/${ id }`} className="study-card-button study-card-body">
       <img
@@ -22,7 +36,11 @@ const StudyCard = ({ id, name, date, pictureCount, previewImage }: Study) => (
       </div>
     </a>
     <div className="study-card-buttons">
-      <Link to={`/analysis/${ id }`} className="text-highlight study-card-button">Analyis</Link>
+      <Link
+        to={`/analysis/${ id }`}
+        className="text-highlight study-card-button"
+        onClick={onSelect}
+      >Analyis</Link>
       <a href={`/viewer/${ id }`} className="text-highlight study-card-button">
         Detail
         <Icon name="rightArrow" />

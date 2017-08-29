@@ -39,6 +39,7 @@ const PatientPageView = () => (
 );
 
 const mapStateToProps = state => ({ selectedPatient: state.selectedPatient });
+
 const mapDispatchToProps = dispatch => ({
   actions:
     bindActionCreators({
