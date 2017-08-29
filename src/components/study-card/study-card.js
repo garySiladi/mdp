@@ -20,11 +20,10 @@ const StudyCard = ({ id, name, date, pictureCount, previewImage }: Study) => (
     </div>
     <div className="study-card-buttons">
       <Link to={`/analysis/${ id }`} className="text-highlight study-card-button">Analyis</Link>
-      <Link to={`/study/${ id }`} className="text-highlight study-card-button">3D View</Link>
-      <Link to={`/study/${ id }`} className="text-highlight study-card-button">
+      <a href={`/viewer/${ id }`} className="text-highlight study-card-button">
         Detail
         <Icon name="rightArrow" />
-      </Link>
+      </a>
     </div>
   </div>
 );
