@@ -1,12 +1,17 @@
 // @flow
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { Icon } from '../image';
+import { history } from '../../app';
 
 const BackButton = () => (
-  <Link to="#" className="back-button">
+  <div
+    className="back-button"
+    onClick={history.goBack}
+    role="button"
+    tabIndex={0}
+  >
     <Icon name="backArrow" />
-  </Link>
+  </div>
 );
 
 export default BackButton;
