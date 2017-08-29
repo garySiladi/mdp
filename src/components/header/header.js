@@ -11,7 +11,12 @@ const Header = () => (
       <img src={profilePic} alt="..." className="profile-pic" />
       <Icon name="dropdownArrow" />
     </div>
-    <Icon name="logout" className="logout" />
+    <a href="https://www.google.com/">
+      <Icon
+        name="logout"
+        className="logout"
+      />
+    </a>
   </div>
 );
 

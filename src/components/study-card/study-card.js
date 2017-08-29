@@ -5,7 +5,7 @@ import { Icon } from '../image';
 import type { Study } from '../../store';
 import { formatDate } from '../../util';
 
-// TODO: Adding 'study-card-button' makes text centered, I like it but need to double check with designer
+// TODO: Adding 'study-card-button' makes text centered, need to double check with designer
 const StudyCard = ({ id, name, date, pictureCount, previewImage }: Study) => (
   <div className="study-card">
     <a href={`/viewer/${ id }`} className="study-card-button study-card-body">
