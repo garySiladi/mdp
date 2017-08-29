@@ -1,51 +1,51 @@
 import React from 'react';
-import type { Study } from '../../store';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import type { Study, Patient } from '../../store';
 import { StudyCard } from '../study-card';
+import { selectStudy } from '../../api';
 
 type Props = {
-  +studyList: Array<Study>,
+  +studies: Array<Study>,
+  +selectedPatient: Patient,
+  +actions: {
+    dispatchSelectStudy: Function,
+  },
 };
 
-const dummyStudies = [ // TODO: implement redux
-  {
-    id: '908209471209421',
-    name: 'Testicles Test',
-    date: '2017-08-23T10:19:28.893Z',
-    pictureCount: 40,
-    previewImage: 'http://sciencenordic.com/sites/default/files/imagecache/620x/MR-UiO_None.jpg',
+const StudyCollection = ({
+  studies,
+  selectedPatient,
+  actions: {
+    dispatchSelectStudy,
   },
-  {
-    id: '456575676579421',
-    name: 'Lung Test',
-    date: '2017-07-23T10:19:28.893Z',
-    pictureCount: 100,
-    previewImage: 'http://sciencenordic.com/sites/default/files/imagecache/620x/MR-UiO_None.jpg',
-  },
-  {
-    id: '124125215125121',
-    name: 'Liver Test',
-    date: '2017-04-23T10:19:28.893Z',
-    pictureCount: 13,
-    previewImage: 'http://sciencenordic.com/sites/default/files/imagecache/620x/MR-UiO_None.jpg',
-  },
-];
+}: Props) => {
+  const renderedStudies = studies.filter(study => study.patientId === selectedPatient.id).map(
+    study => (
+      <StudyCard
+        cardData={study}
+        onSelect={() => dispatchSelectStudy(study)}
+        key={study.id}
+      />
+    ),
+  );
+  return (
+    <div className="study-collection">
+      {renderedStudies}
+    </div>
+  );
+};
 
-class StudyCollection extends React.Component<> {
-  constructor(props) {
-    super(props);
-    this.state = {
-      studyList: dummyStudies,
-    };
-  }
-  props:Props
-  render() {
-    const studies = this.state.studyList.map(study => <StudyCard {...study} key={study.id} />);
-    return (
-      <div className="study-collection">
-        {studies}
-      </div>
-    );
-  }
-}
+const mapStateToProps = state => ({
+  selectedPatient: state.selectedPatient,
+  studies: state.data.studies,
+});
 
-export default StudyCollection;
+const mapDispatchToProps = dispatch => ({
+  actions:
+    bindActionCreators({
+      dispatchSelectStudy: selectStudy,
+    }, dispatch),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(StudyCollection);

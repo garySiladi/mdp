@@ -1,11 +1,19 @@
 .analysis-header {
-  display: table;
+  display: flex;
   width: 100%;
-  height: 5em;
+  margin-bottom: 3em;
+  justify-content: space-between;
 }
 
 .analysis-header > div {
-  display: table-cell;
+  flex: 1;
   text-align: center;
-  vertical-align: middle;
+}
+
+.analysis-header-button {
+  margin-top: 3.5em;
+}
+
+.analysis-image {
+  width: 400px;
 }

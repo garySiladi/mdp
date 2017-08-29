@@ -60,3 +60,15 @@
 .study-card-button:hover {
   background-color: var(--color-overwatch);
 }
+
+.study-card-body {
+  padding-top: 0;
+}
+
+.study-card-body:hover {
+  background-color: var(--color-battlefield);
+}
+
+.study-card-body > .study-card-text {
+  color: var(--color-planetside);
+}

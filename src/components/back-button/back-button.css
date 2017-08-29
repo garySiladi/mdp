@@ -2,6 +2,7 @@
   position: absolute;
   top: 6vh;
   left: 5vw;
+  cursor: pointer;
 }
 
 .back-button > .icon {

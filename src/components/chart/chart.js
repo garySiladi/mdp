@@ -66,8 +66,22 @@ class Graph extends React.Component {
     };
     const options = {
       title: {
-        display: true,
+        display: false,
         text: 'You got cancur',
+      },
+      legend: {
+        display: false,
+      },
+      scales: {
+        xAxes: [{
+          weight: 2,
+          ticks: {
+            maxTicksLimit: 7,
+          },
+        }],
+        yAxes: [{
+          weight: 10,
+        }],
       },
     };
     return (
@@ -81,7 +95,7 @@ class Graph extends React.Component {
 }
 
 const GraphView = ({ data, options, getRef }: Props) => (
-  <Line ref={getRef} data={data} options={options} />
+  <Line ref={getRef} data={data} options={options} width={380} height={250} />
 );
 
 export default Graph;

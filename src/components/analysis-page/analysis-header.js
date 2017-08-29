@@ -1,18 +1,35 @@
 // @flow
 import React from 'react';
+import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import AnalysisResult from './analysis-result';
+import type { Study } from '../../store';
 
-const AnalysisHeader = () => <AnalysisHeaderView />;
+const AnalysisHeader = ({ selectedStudy }: Study) => <AnalysisHeaderView {...selectedStudy} />;
 
-const AnalysisHeaderView = () => (
+type Props = {
+  +previewImage: string,
+  +expectedResult: Array<Number>,
+  +actualResult: Array<Number>,
+};
+
+const AnalysisHeaderView = ({ previewImage, expectedResult, actualResult }: Props) => (
   <div className="analysis-header">
-    <div>Found tumors</div>
-    <div>Expected Result</div>
-    <div>Calculated Result</div>
     <div>
+      <img src={previewImage} alt="..." className="analysis-image" />
+    </div>
+    <div>
+      <AnalysisResult title="Expected result" results={expectedResult} />
+    </div>
+    <div>
+      <AnalysisResult title="Calculated result" results={actualResult} />
+    </div>
+    <div className="analysis-header-button">
       <Link to="#" className="link-button">3D view</Link>
     </div>
   </div>
 );
 
-export default AnalysisHeader;
+const mapStateToProps = state => ({ selectedStudy: state.selectedStudy });
+
+export default connect(mapStateToProps)(AnalysisHeader);

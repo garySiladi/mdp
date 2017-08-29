@@ -5,26 +5,46 @@ import { Icon } from '../image';
 import type { Study } from '../../store';
 import { formatDate } from '../../util';
 
-const StudyCard = ({ id, name, date, pictureCount, previewImage }: Study) => (
+type Props = {
+  +cardData: Study,
+  +onSelect: Function,
+};
+
+// TODO: Adding 'study-card-button' makes text centered, need to double check with designer
+const StudyCard = ({
+  cardData: {
+    id,
+    name,
+    date,
+    sliceCount,
+    previewImage,
+  },
+  onSelect,
+}: Props) => (
   <div className="study-card">
-    <img
-      src={previewImage} // TODO: image processing/component
-      alt={name}
-      className="preview-image"
-    />
-    <span className="text-highlight bold">{name}</span>
-    <div className="study-card-text">
-      <span>{formatDate(date)}</span>
-      <Icon name="numberOfPicture" />
-      <span className="text-light">{pictureCount}</span>
-    </div>
+    <a href={`/viewer/${ id }`} className="study-card-button study-card-body">
+      <img
+        src={previewImage} // TODO: image processing/component
+        alt={name}
+        className="preview-image"
+      />
+      <span className="text-highlight bold">{name}</span>
+      <div className="study-card-text">
+        <span>{formatDate(date)}</span>
+        <Icon name="numberOfPicture" />
+        <span className="text-light">{sliceCount}</span>
+      </div>
+    </a>
     <div className="study-card-buttons">
-      <Link to={`/analysis/${ id }`} className="text-highlight study-card-button">Analyis</Link>
-      <Link to={`/study/${ id }`} className="text-highlight study-card-button">3D View</Link>
-      <Link to={`/study/${ id }`} className="text-highlight study-card-button">
+      <Link
+        to={`/analysis/${ id }`}
+        className="text-highlight study-card-button"
+        onClick={onSelect}
+      >Analyis</Link>
+      <a href={`/viewer/${ id }`} className="text-highlight study-card-button">
         Detail
         <Icon name="rightArrow" />
-      </Link>
+      </a>
     </div>
   </div>
 );

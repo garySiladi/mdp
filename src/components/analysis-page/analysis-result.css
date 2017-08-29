@@ -1,0 +1,35 @@
+.analysis-result {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 9em;
+  border-right: 2px solid var(--color-overwatch);
+}
+
+.analysis-result > * {
+  flex: 1;
+  line-height: 2.5em;
+}
+
+.malign-result {
+  color: red;
+}
+
+.benign-result {
+  color: var(--color-tron);
+}
+
+.result-text {
+  font-size: 1.2em;
+}
+
+.result-number {
+  font-size: 2em;
+}
+
+.result-alert {
+  width: 1.5em;
+  height: 1.5em;
+  margin-right: 1em;
+  margin-left: -2.5em;
+}
