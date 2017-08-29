@@ -1,5 +1,10 @@
 // @flow
-import { RECEIVED_PATIENTS, SELECT_PATIENT } from './actions';
+import {
+  RECEIVED_PATIENTS,
+  SELECT_PATIENT,
+  RECEIVED_STUDIES,
+  SELECT_STUDY,
+} from './actions';
 import type { ActionType } from './actions';
 import type { StateType } from '../store';
 
@@ -13,6 +18,12 @@ export const receiveDataReducer = (state: StateType = INITIAL_STATE, action: Act
         patientList: action.payload,
       };
     }
+    case RECEIVED_STUDIES: {
+      return {
+        ...state,
+        studies: action.payload,
+      };
+    }
     default: {
       return state;
     }
@@ -22,6 +33,17 @@ export const receiveDataReducer = (state: StateType = INITIAL_STATE, action: Act
 export const selectPatientReducer = (state: StateType = INITIAL_STATE, action: ActionType) => {
   switch (action.type) {
     case SELECT_PATIENT: {
+      return action.payload;
+    }
+    default: {
+      return state;
+    }
+  }
+};
+
+export const selectStudyReducer = (state: StateType = INITIAL_STATE, action: ActionType) => {
+  switch (action.type) {
+    case SELECT_STUDY: {
       return action.payload;
     }
     default: {

@@ -20,6 +20,16 @@ const dummyPatients = [
   },
 ];
 
+const dummyStudy = {
+  id: '7',
+  name: 'Sag T1 FSE',
+  date: '2017-08-23T10:19:28.893Z',
+  sliceCount: 20,
+  previewImage: 'http://sciencenordic.com/sites/default/files/imagecache/620x/MR-UiO_None.jpg',
+  expectedResult: [1, 2],
+  actualResult: [1, 2],
+};
+
 const fetchData = (url, callback, temporaryFakeValue = dummyPatients) => {
   console.log(`Fetching: ${ ENDPOINT }${ url }`); // eslint-disable-line
   callback(temporaryFakeValue);
@@ -28,3 +38,7 @@ const fetchData = (url, callback, temporaryFakeValue = dummyPatients) => {
 export const fetchPatients = (dispatchReceivedPatients: Function) => {
   fetchData('/patients', dispatchReceivedPatients);
 };
+
+export const fetchStudies = (patientId: string, dispatchReceivedStudies: Function) => (
+  fetchData(`/studies/${ patientId }`, dispatchReceivedStudies, [dummyStudy])
+);

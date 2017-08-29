@@ -21,4 +21,5 @@ export type State = {
     patientList: Array<Patient>,
   },
   +selectedPatient: Patient,
+  +selectedStudy: Study,
 };

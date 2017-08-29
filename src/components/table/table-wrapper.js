@@ -22,11 +22,12 @@ class TableWrapper extends React.Component<> {
   }
   props:Props
   render() {
+    const { data, actions } = this.props;
     return (
       <div>
         <TableViewer
-          data={this.props.data.patientList}
-          handleSelectPatient={this.props.actions.dispatchSelectedPatient}
+          data={data.patientList}
+          handleSelectPatient={actions.dispatchSelectedPatient}
         />
       </div>
     );
