@@ -16,15 +16,14 @@ const StudyCard = ({
     id,
     name,
     date,
-    sliceCount,
-    previewImage,
+    nodules,
   },
   onSelect,
 }: Props) => (
   <div className="study-card">
     <a href={`/viewer/${ id }`} className="study-card-button study-card-body">
       <img
-        src={previewImage} // TODO: image processing/component
+        src={nodules[0].NoduleImageFilepath} // TODO: image processing/component
         alt={name}
         className="preview-image"
       />
@@ -32,7 +31,7 @@ const StudyCard = ({
       <div className="study-card-text">
         <span>{formatDate(date)}</span>
         <Icon name="numberOfPicture" />
-        <span className="text-light">{sliceCount}</span>
+        <span className="text-light">{nodules.length}</span>
       </div>
     </a>
     <div className="study-card-buttons">

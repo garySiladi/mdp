@@ -1,19 +1,71 @@
 .analysis-header {
   display: flex;
   width: 100%;
-  margin-bottom: 3em;
+  margin-bottom: 2em;
+  padding-bottom: 2em;
   justify-content: space-between;
+  border-bottom: 3px solid var(--color-overwatch);
+}
+
+.analysis-header:last-child {
+  border-bottom: none;
 }
 
 .analysis-header > div {
-  flex: 1;
   text-align: center;
 }
 
-.analysis-header-button {
-  margin-top: 3.5em;
+.analysis-header > div:first-child {
+  width: 45%;
 }
 
 .analysis-image {
-  width: 400px;
+  width: 100%;
+}
+
+.analysis-data-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.analysis-data-header > span {
+  flex: 1;
+}
+
+.analysis-data {
+  width: 70%;
+  padding: 0 4em;
+}
+
+.analysis-data-results {
+  display: flex;
+  flex-flow: row wrap;
+  margin-top: 1.5em;
+}
+
+.analysis-data-results > div {
+  display: flex;
+  width: calc(100% / 3);
+  border-right: 2px solid var(--color-overwatch);
+  box-sizing: border-box;
+}
+
+.analysis-data-results > div:nth-child(1),
+.analysis-data-results > div:nth-child(2),
+.analysis-data-results > div:nth-child(3) {
+  border-bottom: 2px solid var(--color-overwatch);
+}
+
+.analysis-data-results > div:nth-child(3n) {
+  border-right: none;
+}
+
+.analysis-diagnosis {
+  color: var(--color-halo);
+  font-size: 1.2em;
+}
+
+.diagnosis-result {
+  font-size: 1.5em;
 }

@@ -3,11 +3,11 @@
   flex-direction: column;
   justify-content: center;
   height: 9em;
-  border-right: 2px solid var(--color-overwatch);
+  margin-left: 4em;
+  text-align: left;
 }
 
 .analysis-result > * {
-  flex: 1;
   line-height: 2.5em;
 }
 
@@ -21,6 +21,7 @@
 
 .result-text {
   font-size: 1.2em;
+  color: var(--color-halo);
 }
 
 .result-number {

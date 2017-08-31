@@ -5,6 +5,7 @@
 .ReactTable .rt-tbody .rt-td {
   padding: 1em;
   border-right: none;
+  text-align: center;
 }
 
 .ReactTable .rt-thead .rt-th {
