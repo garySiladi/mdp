@@ -52,13 +52,11 @@ type Props = {
   +analysis: Array,
 };
 
-const swapPort = str => str.replace('3000', '3333');
-
 // TODO: remove analysis check
 const AnalysisHeaderView = ({ previewImage, analysis }: Props) => analysis ? (
   <div className="analysis-header">
     <div>
-      <img src={swapPort(previewImage)} alt="..." className="analysis-image" />
+      <img src={previewImage} alt="..." className="analysis-image" />
     </div>
     <div className="analysis-data">
       <div className="analysis-data-header">
