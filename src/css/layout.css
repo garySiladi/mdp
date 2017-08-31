@@ -11,6 +11,7 @@
   text-align: center;
   color: var(--color-halo);
   transition: 0.3s background-color, 0.3s color;
+  cursor: pointer;
 }
 
 .link-button:hover {
@@ -21,5 +22,5 @@
 .section-body {
   margin-top: 2em;
   padding: 3em;
-  background-color: var(--color-destiny);
+  background-color: var(--color-bioshock);
 }

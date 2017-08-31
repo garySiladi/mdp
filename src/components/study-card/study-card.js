@@ -30,7 +30,7 @@ const StudyCard = ({
       <span className="text-highlight bold">{name}</span>
       <div className="study-card-text">
         <span>{formatDate(date)}</span>
-        <Icon name="numberOfPicture" />
+        <Icon name="numberOfPictures" />
         <span className="text-light">{nodules.length}</span>
       </div>
     </a>
@@ -42,7 +42,7 @@ const StudyCard = ({
       >Analyis</Link>
       <a href={`/viewer/${ id }`} className="text-highlight study-card-button">
         Detail
-        <Icon name="rightArrow" />
+        <Icon name="rightArrowButton" />
       </a>
     </div>
   </div>

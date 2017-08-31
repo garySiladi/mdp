@@ -12,7 +12,7 @@
 }
 
 .malign-result {
-  color: red;
+  color: var(--color-danger);
 }
 
 .benign-result {

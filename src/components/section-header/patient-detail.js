@@ -17,7 +17,7 @@ const PatientDetailView = ({ phone, email }: Props) => (
       <span className="text-light bold patient-phone">{phone}</span>
     </div>
     <div>
-      <Icon name="email" />
+      <Icon name="mail" />
       <span className="text-highlight patient-email">{email}</span>
     </div>
   </div>

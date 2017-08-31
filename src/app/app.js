@@ -8,6 +8,7 @@ import { BackButton } from '../components/back-button';
 import { Homepage } from '../components/home-page';
 import { Analysis } from '../components/analysis-page';
 import { PatientPage } from '../components/patient-page';
+import { PerformancePage } from '../components/performance-page';
 
 class App extends React.Component<{}> { // eslint-disable-line react/prefer-stateless-function
   render() {
@@ -20,6 +21,7 @@ class App extends React.Component<{}> { // eslint-disable-line react/prefer-stat
               <Route path="/(.+)" component={BackButton} />
               <div className="content-body">
                 <Route exact path="/" component={Homepage} />
+                <Route path="/performance" component={PerformancePage} />
                 <Route path="/analysis" component={Analysis} />
                 <Route path="/patient" component={PatientPage} />
               </div>

@@ -1,0 +1,23 @@
+.performance {
+  margin-top: 3em;
+  color: var(--color-halo);
+}
+
+.performance > div {
+  display: flex;
+  margin-bottom: 1.5em;
+  padding: 2em 3em;
+  background-color: var(--color-bioshock);
+}
+
+.performance > div > * {
+  flex: 1;
+}
+
+.performance .title {
+  font-size: 1.2em;
+}
+
+.performance .titled-section:first-child > .title {
+  font-size: 1.2em;
+}
