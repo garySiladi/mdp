@@ -77,10 +77,16 @@ class Graph extends React.Component {
           weight: 2,
           ticks: {
             maxTicksLimit: 7,
+            fontColor: '#ccc',
+            fontSize: 16,
           },
         }],
         yAxes: [{
           weight: 10,
+          ticks: {
+            fontColor: '#ccc',
+            fontSize: 16,
+          },
         }],
       },
     };

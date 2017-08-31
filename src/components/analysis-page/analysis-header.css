@@ -1,10 +1,9 @@
 .analysis-header {
   display: flex;
-  width: 100%;
   margin-bottom: 2em;
-  padding-bottom: 2em;
+  padding: 3em;
   justify-content: space-between;
-  border-bottom: 3px solid var(--color-overwatch);
+  background-color: var(--color-bioshock);
 }
 
 .analysis-header:last-child {
@@ -35,26 +34,26 @@
 
 .analysis-data {
   width: 70%;
-  padding: 0 4em;
+  margin-left: 4em;
 }
 
 .analysis-data-results {
   display: flex;
   flex-flow: row wrap;
-  margin-top: 1.5em;
+  margin-top: 2em;
 }
 
 .analysis-data-results > div {
   display: flex;
   width: calc(100% / 3);
-  border-right: 2px solid var(--color-overwatch);
+  border-right: 1px solid var(--color-battlefield);
   box-sizing: border-box;
 }
 
 .analysis-data-results > div:nth-child(1),
 .analysis-data-results > div:nth-child(2),
 .analysis-data-results > div:nth-child(3) {
-  border-bottom: 2px solid var(--color-overwatch);
+  border-bottom: 1px solid var(--color-battlefield);
 }
 
 .analysis-data-results > div:nth-child(3n) {
