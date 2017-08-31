@@ -5,7 +5,9 @@ import profilePic from '../../assets/profile-pic.png';
 
 const Header = () => (
   <div className="header">
-    <div className="logo" />
+    <div className="logo">
+      POC DEMO
+    </div>
     <div className="profile">
       <span className="bold text-highlight">Dr. The Doctor</span>
       <img src={profilePic} alt="..." className="profile-pic" />
