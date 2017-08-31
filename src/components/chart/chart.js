@@ -57,7 +57,7 @@ class Graph extends React.Component {
         }, {
           data: dummyData.map(entry => (entry + (Math.random() * 0.2)) - 0.1),
           label: 'Cancur',
-          borderColor: '#323232',
+          borderColor: '#666',
           borderWidth: 2,
           fill: false,
           pointStyle: 'dash',

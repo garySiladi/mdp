@@ -14,7 +14,7 @@ const PatientStudies = ({ studyCount, lastStudyDate }: Props) => (
     <span className="study-count text-light">{studyCount}</span>
     <span className="label">Last Study</span>
     <span className="last-study-date text-light">{formatDate(lastStudyDate)}</span>
-    <Icon name="print" />
+    <Icon name="printer" />
   </div>
 );
 

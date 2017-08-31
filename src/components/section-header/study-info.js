@@ -13,11 +13,11 @@ type Props = {
 const StudyInfo = ({ name, nodules = [], date }: Props) => (
   <div className="studyinfo">
     <span className="label study-name bold text-highlight">{name}</span>
-    <Icon className="number-of-picture-icon label" name="numberOfPicture" />
+    <Icon className="number-of-picture-icon label" name="numberOfPictures" />
     <span className="study-count text-light">{nodules.length}</span>
     <span className="label">Date of Study</span>
     <span className="last-study-date text-light">{formatDate(date)}</span>
-    <Icon className="print-icon" name="print" />
+    <Icon className="print-icon" name="printer" />
   </div>
 );
 

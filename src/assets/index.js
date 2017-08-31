@@ -1,35 +1,36 @@
-import alert from './alert.svg';
+
 import backArrow from './back_arrow.svg';
-import dropdownArrow from './dropdown_arrow.svg';
-import email from './email.svg';
-import logout from './logout.svg';
-import numberOfPicture from './number_of_picture.svg';
+import downSortingActive from './down_sorting_active.svg';
+import downSortingNonactive from './down_sorting_nonactive.svg';
+import dropdownTopBar from './dropdovn_top_bar.svg';
+import logOut from './log_out.svg';
+import mail from './mail.svg';
+import numberOfPictures from './number_of_pictures.svg';
 import patientAvatar from './patient_avatar.svg';
 import phone from './phone.svg';
-import print from './print.svg';
-import rightArrow from './right_arrow.svg';
+import printer from './printer.svg';
+import rightArrowButton from './right_arrow_button.svg';
 import search from './search.svg';
-import sortDownActive from './sort_down_active.svg';
-import sortDownNonactive from './sort_down_nonactive.svg';
-import sortUpActive from './sort_up_active.svg';
-import sortUpNonactive from './sort_up_nonactive.svg';
+import upSortingActive from './up_sorting_active.svg';
+import upSortingNonactive from './up_sorting_nonactive.svg';
+import warning from './warning.svg';
 
 const icons = {
-  alert,
   backArrow,
-  dropdownArrow,
-  email,
-  logout,
-  numberOfPicture,
+  downSortingActive,
+  downSortingNonactive,
+  dropdownTopBar,
+  logOut,
+  mail,
+  numberOfPictures,
   patientAvatar,
   phone,
-  print,
-  rightArrow,
+  printer,
+  rightArrowButton,
   search,
-  sortDownActive,
-  sortDownNonactive,
-  sortUpActive,
-  sortUpNonactive,
+  upSortingActive,
+  upSortingNonactive,
+  warning,
 };
 
 export {

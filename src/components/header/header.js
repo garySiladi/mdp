@@ -11,11 +11,11 @@ const Header = () => (
     <div className="profile">
       <span className="bold text-highlight">Dr. The Doctor</span>
       <img src={profilePic} alt="..." className="profile-pic" />
-      <Icon name="dropdownArrow" />
+      <Icon name="dropdownTopBar" />
     </div>
     <a href="https://www.google.com/">
       <Icon
-        name="logout"
+        name="logOut"
         className="logout"
       />
     </a>

@@ -19,7 +19,7 @@ const AnalysisResult = ({ title, prediction, probability }: Props) => {
   return (
     <div className="analysis-result">
       <div>
-        {formattedPrediction === 'malign' ? <Icon name="alert" className="result-alert" /> : null}
+        {formattedPrediction === 'malign' ? <Icon name="warning" className="result-alert" /> : null}
         <span className={`${ formattedPrediction }-result result-number`}>
           {`${ Math.round(probability * 100) }% `}
         </span>
