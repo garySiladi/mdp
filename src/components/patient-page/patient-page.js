@@ -17,7 +17,7 @@ type Props = { // FIXME: update props
 class PatientPage extends React.Component {
   componentWillMount() {
     const { selectedPatient, actions } = this.props;
-    fetchStudies(selectedPatient, actions.dispatchReceivedStudies);
+    fetchStudies(selectedPatient.id, actions.dispatchReceivedStudies);
   }
   props:Props
   render() {

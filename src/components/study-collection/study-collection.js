@@ -14,7 +14,7 @@ type Props = {
 };
 
 const StudyCollection = ({
-  studies,
+  studies = [],
   selectedPatient,
   actions: {
     dispatchSelectStudy,

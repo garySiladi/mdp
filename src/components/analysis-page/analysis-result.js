@@ -3,26 +3,31 @@ import { Icon } from '../image';
 
 type Props = {
   +title: string,
-  +results: Array<Number>,
+  +prediction: object,
+  +probability: object, // FIXME:
 };
 
-const AnalysisResult = ({ title, results }: Props) => (
-  <div className="analysis-result">
-    {results && results[0] ? (
+const temporaryFormatPrediction = prediction => {
+  if (prediction !== 'malign' && prediction !== 'benign') {
+    return Number(prediction) > 0.5 ? 'malign' : 'benign';
+  }
+  return prediction;
+};
+
+const AnalysisResult = ({ title, prediction, probability }: Props) => {
+  const formattedPrediction = temporaryFormatPrediction(prediction);
+  return (
+    <div className="analysis-result">
       <div>
-        <Icon name="alert" className="result-alert" />
-        <span className="malign-result result-number">{results[0]}</span>
-        <span className="malign-result result-text">{' malign'}</span>
+        {formattedPrediction === 'malign' ? <Icon name="alert" className="result-alert" /> : null}
+        <span className={`${ formattedPrediction }-result result-number`}>
+          {`${ Math.round(probability * 100) }% `}
+        </span>
+        <span className="result-text">{formattedPrediction}</span>
       </div>
-    ) : null}
-    {results && results[1] ? (
-      <div>
-        <span className="benign-result result-number">{results[1]}</span>
-        <span className="benign-result result-text">{' benign'}</span>
-      </div>
-    ) : null}
-    <span className="result-title">{title}</span>
-  </div>
-);
+      <span className="result-title">{title}</span>
+    </div>
+  );
+};
 
 export default AnalysisResult;

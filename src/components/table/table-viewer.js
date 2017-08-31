@@ -62,7 +62,7 @@ const TableViewer = ({ data, handleSelectPatient }: TableViewerProps) => (
       ]}
       defaultPageSize={20}
       style={{
-        height: '400px',
+        height: '80vh',
       }}
       showPagination={false}
       className="-highlight"
