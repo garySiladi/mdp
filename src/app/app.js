@@ -9,6 +9,7 @@ import { Homepage } from '../components/home-page';
 import { Analysis } from '../components/analysis-page';
 import { PatientPage } from '../components/patient-page';
 import { PerformancePage } from '../components/performance-page';
+import { ModelPage } from '../components/model-page';
 
 class App extends React.Component<{}> { // eslint-disable-line react/prefer-stateless-function
   render() {
@@ -24,6 +25,7 @@ class App extends React.Component<{}> { // eslint-disable-line react/prefer-stat
                 <Route path="/performance" component={PerformancePage} />
                 <Route path="/analysis" component={Analysis} />
                 <Route path="/patient" component={PatientPage} />
+                <Route path="/model/:id" component={ModelPage} />
               </div>
             </div>
           </div>

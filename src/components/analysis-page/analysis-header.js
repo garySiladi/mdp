@@ -39,6 +39,7 @@ const AnalysisHeader = ({ selectedStudy }: Study) => selectedStudy.nodules ? (
       selectedStudy.nodules.map(nodule => (
         <AnalysisHeaderView
           key={String(nodule.NoduleID)}
+          noduleID={nodule.NoduleID}
           previewImage={nodule.NoduleImageFilepath}
           analysis={selectedStudy.analysis.find(entry => entry.NoduleID === nodule.NoduleID)}
         />
@@ -50,10 +51,11 @@ const AnalysisHeader = ({ selectedStudy }: Study) => selectedStudy.nodules ? (
 type Props = {
   +previewImage: string,
   +analysis: Array,
+  +noduleID: string,
 };
 
 // TODO: remove analysis check
-const AnalysisHeaderView = ({ previewImage, analysis }: Props) => analysis ? (
+const AnalysisHeaderView = ({ previewImage, analysis, noduleID }: Props) => analysis ? (
   <div className="analysis-header">
     <div>
       <img src={previewImage} alt="..." className="analysis-image" />
@@ -73,13 +75,13 @@ const AnalysisHeaderView = ({ previewImage, analysis }: Props) => analysis ? (
           </span>
         </div>
         <div className="analysis-header-button">
-          <Link to="#" className="link-button">3D view</Link>
+          <Link to={`/model/${ noduleID }`} className="link-button">3D view</Link>
         </div>
       </div>
       <div className="analysis-data-results">
         {
           results.map(({ title, key }) => (
-            <div>
+            <div key={key}>
               <AnalysisResult
                 title={title}
                 prediction={analysis[`${ key }_pred`]}
