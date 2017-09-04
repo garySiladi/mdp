@@ -14,21 +14,23 @@ type Props = {
 };
 
 const StudyCollection = ({
-  studies = [],
+  studies,
   selectedPatient,
   actions: {
     dispatchSelectStudy,
   },
 }: Props) => {
-  const renderedStudies = studies.filter(study => study.patientId === selectedPatient.id).map(
-    study => (
-      <StudyCard
-        cardData={study}
-        onSelect={() => dispatchSelectStudy(study)}
-        key={study.id}
-      />
-    ),
-  );
+  const renderedStudies = studies ? studies
+    .filter(study => study.patientId === selectedPatient.id)
+    .map(
+      study => (
+        <StudyCard
+          cardData={study}
+          onSelect={() => dispatchSelectStudy(study)}
+          key={study.id}
+        />
+      ),
+    ) : null;
   return (
     <div className="study-collection">
       {renderedStudies}

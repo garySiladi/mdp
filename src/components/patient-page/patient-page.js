@@ -17,7 +17,9 @@ type Props = { // FIXME: update props
 class PatientPage extends React.Component {
   componentWillMount() {
     const { selectedPatient, actions } = this.props;
-    fetchStudies(selectedPatient.id, actions.dispatchReceivedStudies);
+    if (selectedPatient.id) {
+      fetchStudies(selectedPatient.id, actions.dispatchReceivedStudies);
+    }
   }
   props:Props
   render() {
@@ -38,7 +40,9 @@ const PatientPageView = () => (
   </div>
 );
 
-const mapStateToProps = state => ({ selectedPatient: state.selectedPatient });
+const mapStateToProps = ({ selectedPatient }) => ({
+  selectedPatient,
+});
 
 const mapDispatchToProps = dispatch => ({
   actions:
