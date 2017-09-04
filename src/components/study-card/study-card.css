@@ -35,6 +35,9 @@
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  border-right: 1px solid var(--color-overwatch);
+  border-bottom: 1px solid var(--color-overwatch);
+  border-left: 1px solid var(--color-overwatch);
 }
 
 .study-card-buttons .icon {
@@ -48,12 +51,9 @@
   width: 100%;
   text-align: center;
   padding: 0.75em 0;
-  border-top: 1px solid var(--color-overwatch);
-  border-bottom: 1px solid var(--color-overwatch);
 }
 
-.study-card-button:nth-child(2n+1) {
-  border-right: 1px solid var(--color-overwatch);
+.study-card-button:nth-child(2) {
   border-left: 1px solid var(--color-overwatch);
 }
 
@@ -63,6 +63,8 @@
 
 .study-card-body {
   padding-top: 0;
+  border: 1px solid var(--color-overwatch);
+  box-sizing: border-box;
 }
 
 .study-card-body:hover {
