@@ -4,6 +4,7 @@ import {
   SELECT_PATIENT,
   RECEIVED_STUDIES,
   SELECT_STUDY,
+  RECEIVED_PERFORMANCE_DATA,
 } from './actions';
 import type { ActionType } from './actions';
 import type { StateType } from '../store';
@@ -23,6 +24,17 @@ export const receiveDataReducer = (state: StateType = INITIAL_STATE, action: Act
         ...state,
         studies: action.payload,
       };
+    }
+    default: {
+      return state;
+    }
+  }
+};
+
+export const receivePerformanceReducer = (state: StateType = [], action: ActionType) => {
+  switch (action.type) {
+    case RECEIVED_PERFORMANCE_DATA: {
+      return action.payload;
     }
     default: {
       return state;

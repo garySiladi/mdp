@@ -16,11 +16,10 @@ type Props = {
   +getRef: Function,
 }
 
-const maxData = 800;
-const maximum = Math.log10(maxData);
-const dummyData = Array(maxData).fill().map((_, i) => (
-  Math.log10(i) / maximum
-));
+type WrapperProps = {
+  +values: Array<number>,
+  +medianValues: Array<number>,
+};
 
 class Graph extends React.Component {
   static createGradient(chartInstance) {
@@ -43,19 +42,21 @@ class Graph extends React.Component {
     this.setState({ medianBackground: Graph.createGradient(chartInstance) }); // eslint-disable-line
   }
 
+  props:WrapperProps
   render() {
+    const { values, medianValues } = this.props;
     const data = {
-      labels: Array(maxData).fill().map((_, i) => i),
+      labels: Array(values.length).fill().map((_, i) => i),
       datasets: [
         {
-          data: dummyData,
+          data: medianValues,
           label: 'Median',
           borderColor: '#9ccef9',
           backgroundColor: this.state.medianBackground,
           pointStyle: 'line',
           showLines: false,
         }, {
-          data: dummyData.map(entry => (entry + (Math.random() * 0.2)) - 0.1),
+          data: values,
           label: 'Cancur',
           borderColor: '#666',
           borderWidth: 2,

@@ -30,7 +30,7 @@ class PatientPage extends React.Component {
 const PatientPageView = () => (
   <div className="patientpage">
     <SectionHeader>
-      <PatientInfo />
+      <PatientInfo disableLink />
       <PatientDetail />
       <PatientStudies />
     </SectionHeader>

@@ -39,7 +39,7 @@ const StudyCard = ({
         to={`/analysis/${ id }`}
         className="text-highlight study-card-button"
         onClick={onSelect}
-      >Analyis</Link>
+      >Analysis</Link>
       <a href={`/viewer/${ id }`} className="text-highlight study-card-button">
         Detail
         <Icon name="rightArrowButton" />
