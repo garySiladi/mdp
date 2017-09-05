@@ -2,17 +2,28 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import classnames from 'classnames';
 import { Icon } from '../image';
 
 type Props = {
   +name: string,
   +id: string,
+  disableLink?: boolean,
 };
 
 const PatientInfo = (props: Props) => <PatientInfoView {...props} />;
 
-const PatientInfoView = ({ name, id }: Props) => (
-  <Link to={`/patient/${ id }`} className="patient-info">
+PatientInfo.defaultProps = {
+  disableLink: false,
+};
+
+const PatientInfoView = ({ name, id, disableLink }: Props) => (
+  <Link
+    to={`/patient/${ id }`}
+    className={classnames('patient-info', {
+      'disabled-link': disableLink,
+    })}
+  >
     <div>
       <Icon name="patientAvatar" />
       <span className="text-highlight bold patient-name">{name}</span>
@@ -23,6 +34,10 @@ const PatientInfoView = ({ name, id }: Props) => (
     </div>
   </Link>
 );
+
+PatientInfoView.defaultProps = {
+  disableLink: false,
+};
 
 const mapStateToProps = ({ selectedPatient: { name, id } }) => ({
   name,
