@@ -51,3 +51,30 @@ export const fetchStudies = (patientId: string, dispatchReceivedStudies: Functio
     ));
   });
 };
+
+export const fetchPerformanceData = (dispatchReceivedPerformanceData: Function) => {
+  // fetchData('/performance')
+  //   .then(values => {
+  //     dispatchReceivedPerformanceData(values.map(
+  //       ({ Title, Values, MedianValues }) => ({
+  //         title: title,
+  //         values: values,
+  //         medianValues: MedianValues,
+  //       }),
+  //     ));
+  //   });
+
+  const titles = ['Accuracy', 'Loss', 'Test Accuracy'];
+  const maxData = 800;
+  const maximum = Math.log10(maxData);
+  const medianValues = Array(maxData).fill().map((_, i) => (
+    Math.log10(i) / maximum
+  ));
+  const values = medianValues.map(entry => (entry + (Math.random() * 0.2)) - 0.1);
+
+  dispatchReceivedPerformanceData(titles.map(title => ({
+    title,
+    values,
+    medianValues,
+  })));
+};

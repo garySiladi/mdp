@@ -19,6 +19,12 @@ export type Study = {
   +actualResult: Array<number>,
 }
 
+export type PerformanceData = {
+  +title: string,
+  +values: Array<number>,
+  +medianValues: Array<number>,
+}
+
 export type State = {
   +data: {
     patientList: Array<Patient>,
@@ -26,4 +32,5 @@ export type State = {
   },
   +selectedPatient: Patient,
   +selectedStudy: Study,
+  +performance: PerformanceData,
 };

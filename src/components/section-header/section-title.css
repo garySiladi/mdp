@@ -2,7 +2,7 @@
   position: relative;
   width: 12em;
   color: var(--color-halo);
-  border-bottom: 2px solid var(--color-tron);
+  border-bottom: 3px solid var(--color-tron);
 }
 
 .section-title > span {

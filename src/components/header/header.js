@@ -9,7 +9,7 @@ const Header = () => (
       POC DEMO
     </div>
     <div className="profile">
-      <span className="bold text-highlight">Dr. The Doctor</span>
+      <span className="bold text-highlight">The Doctor</span>
       <img src={profilePic} alt="..." className="profile-pic" />
       <Icon name="dropdownTopBar" />
     </div>
