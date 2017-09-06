@@ -26,5 +26,5 @@
   height: var(--search-icon-size);
   position: absolute;
   right: 1.5em;
-  top: 0;
+  top: 1em;
 }
