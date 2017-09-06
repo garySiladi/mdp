@@ -15,9 +15,10 @@ type TableViewerDataProps = {
 type TableViewerProps = {
   +data: Array<TableViewerDataProps>,
   handleSelectPatient: () => void,
+  +pageSize: number,
 };
 
-const TableViewer = ({ data, handleSelectPatient }: TableViewerProps) => (
+const TableViewer = ({ data, handleSelectPatient, pageSize }: TableViewerProps) => (
   <div className="table-viewer">
     <ReactTable
       data={data}
@@ -39,6 +40,8 @@ const TableViewer = ({ data, handleSelectPatient }: TableViewerProps) => (
         {
           Header: 'Last Study',
           accessor: 'lastStudyDate',
+          className: 'last-study',
+          headerClassName: 'last-study',
           Cell: row => (
             <div>
               {formatDate(row.original.lastStudyDate)}
@@ -47,6 +50,8 @@ const TableViewer = ({ data, handleSelectPatient }: TableViewerProps) => (
         },
         {
           Header: '',
+          className: 'patient-link',
+          headerClassName: 'patient-link patient-link-header',
           Cell: row => (
             <div>
               <Link
@@ -60,11 +65,11 @@ const TableViewer = ({ data, handleSelectPatient }: TableViewerProps) => (
           ),
         },
       ]}
-      defaultPageSize={20}
       style={{
-        height: '75vh',
+        height: '60vh',
       }}
-      showPagination={false}
+      pageSize={pageSize > data.length ? data.length : pageSize}
+      showPaginationBottom={false}
       className="-highlight"
       noDataText="No Patients Found!"
     />
