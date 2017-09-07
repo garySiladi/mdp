@@ -14,7 +14,7 @@ const ModelPage = ({ match }: Props) => (
       <SectionTitle title="3D view" />
       <StudyInfo />
     </SectionHeader>
-    <div className="section-body">
+    <div className="section-body viewer-container">
       <ModelViewer noduleID={match.params && match.params.id} />
     </div>
   </div>

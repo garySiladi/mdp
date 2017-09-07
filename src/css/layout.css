@@ -24,3 +24,7 @@
   padding: 3em;
   background-color: var(--color-bioshock);
 }
+
+.section-body.viewer-container {
+  padding: 0;
+}
